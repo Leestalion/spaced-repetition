@@ -32,3 +32,7 @@ To calculate the next reviewing time, memorize uses the sampler function, which 
 The sampler first calculate the maximum intensity, <img src="http://www.sciweavers.org/tex2img.php?eq=%5Cfrac%7B1%7D%7B%5Csqrt%28q%29%7D&bc=White&fc=Black&im=jpg&fs=12&ff=arev&edit=0" align="center" border="0" alt="\frac{1}{\sqrt(q)}" width="44" height="47" />. This value will be the rate parameter of a random value taken from an exponential distribution. This will be used to calculate the step at which we calculate the intensity and so the reviewing time. That way the steps will follow the exponential model of the memory from above.
 
 The newly calculated intensity ratio-ed by the maximum one will be compared to a random uniform value between 0 and 1. I don't really understand this step but I think it is to bring more disparities to the reviewing times.
+
+## Memorize Functionnalities
+
+The dataset from duolingo is easy to use and very complete: [click here](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/N8XJME) to see the dataset source.

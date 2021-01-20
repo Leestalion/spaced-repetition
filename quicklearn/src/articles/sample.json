@@ -1,0 +1,35 @@
+{
+    "unknownwords":{
+            "doom": {
+              "lastTime": "2020/7/14",
+              "original": "doomed",
+              "parts": "NN",
+              "rank": 4631,
+              "remember": 1,
+              "repetition": 1,
+              "sentence": "It shows her plane on a Miami runway moments before she took off on her doomed flight around the world.",
+              "understand": 0,
+              "view": true
+            },
+            "navigator": {
+              "lastTime": "2020/7/14",
+              "parts": "NN",
+              "rank": 7221,
+              "remember": 1,
+              "repetition": 1,
+              "sentence": "The piece of metal was found on a tiny Pacific island in the area where Earhart and her navigator Fred Noonan disappeared.",
+              "understand": 0,
+              "view": true
+            },
+            "silvery": {
+              "lastTime": "2020/7/14",
+              "parts": "NN",
+              "rank": 7234,
+              "remember": 1,
+              "repetition": 1,
+              "sentence": "He thinks the silvery patch is proof that the plane had a repair.",
+              "understand": 0,
+              "view": true
+            }
+        }
+}

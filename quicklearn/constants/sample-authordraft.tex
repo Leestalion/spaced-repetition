@@ -1,0 +1,878 @@
+%%
+%% This is file `sample-authordraft.tex',
+%% generated with the docstrip utility.
+%%
+%% The original source files were:
+%%
+%% samples.dtx  (with options: `authordraft')
+%% 
+%% IMPORTANT NOTICE:
+%% 
+%% For the copyright see the source file.
+%% 
+%% Any modified versions of this file must be renamed
+%% with new filenames distinct from sample-authordraft.tex.
+%% 
+%% For distribution of the original source see the terms
+%% for copying and modification in the file samples.dtx.
+%% 
+%% This generated file may be distributed as long as the
+%% original source files, as listed above, are part of the
+%% same distribution. (The sources need not necessarily be
+%% in the same archive or directory.)
+%%
+%% The first command in your LaTeX source must be the \documentclass command.
+% \documentclass[sigconf,authordraft]{acmart}
+
+
+
+%%%% As of March 2017, [siggraph] is no longer used. Please use sigconf (above) for SIGGRAPH conferences.
+
+%%%% As of May 2020, [sigchi] and [sigchi-a] are no longer used. Please use sigconf (above) for SIGCHI conferences.
+
+%%%% Proceedings format for SIGPLAN conferences 
+% \documentclass[sigplan, anonymous, authordraft]{acmart}
+
+%%%% Proceedings format for conferences using one-column small layout
+\documentclass[sigchi]{acmart}
+\usepackage{multirow}
+\usepackage{subfigure}
+\usepackage{color,soul}
+% NOTE that a single column version is required for submission and peer review. This can be done by changing the \doucmentclass[...]{acmart} in this template to 
+% \documentclass[manuscript,screen]{acmart}
+
+%%
+%% \BibTeX command to typeset BibTeX logo in the docs
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+%% Rights management information.  This information is sent to you
+%% when you complete the rights form.  These commands have SAMPLE
+%% values in them; it is your responsibility as an author to replace
+%% the commands and values with those provided to you when you
+%% complete the rights form.
+\copyrightyear{2020} 
+\acmYear{2020} 
+\setcopyright{rightsretained} 
+\acmConference[UbiComp/ISWC '20 Adjunct]{Adjunct Proceedings of the 2020 ACM International Joint Conference on Pervasive and Ubiquitous Computing and Proceedings of the 2020 ACM International Symposium on Wearable Computers}{September 12--16, 2020}{Virtual Event, Mexico}
+\acmBooktitle{Adjunct Proceedings of the 2020 ACM International Joint Conference on Pervasive and Ubiquitous Computing and Proceedings of the 2020 ACM International Symposium on Wearable Computers (UbiComp/ISWC '20 Adjunct), September 12--16, 2020, Virtual Event, Mexico}\acmDOI{10.1145/3410530.3414406}
+\acmISBN{978-1-4503-8076-8/20/09}
+
+
+
+%%
+%% Submission ID.
+%% Use this when submitting an article to a sponsored event. You'll
+%% receive a unique submission ID from the organizers
+%% of the event, and this ID should be used as the parameter to this command.
+%%\acmSubmissionID{123-A56-BU3}
+
+%%
+%% The majority of ACM publications use numbered citations and
+%% references.  The command \citestyle{authoryear} switches to the
+%% "author year" style.
+%%
+%% If you are preparing content for an event
+%% sponsored by ACM SIGGRAPH, you must use the "author year" style of
+%% citations and references.
+%% Uncommenting
+%% the next command will enable that style.
+%%\citestyle{acmauthoryear}
+
+%%
+%% end of the preamble, start of the body of the document source.
+\begin{document}
+
+%%
+%% The "title" command has an optional parameter,
+%% allowing the author to define a "short title" to be used in page headers.
+\title{Mobile Vocabulometer: A Context-based Learning Mobile Application to Enhance English Vocabulary Acquisition}
+
+%%
+%% The "author" command and its associated commands are used to define
+%% the authors and their affiliations.
+%% Of note is the shared affiliation of the first two authors, and the
+%% "authornote" and "authornotemark" commands
+%% used to denote shared contribution to the research.
+
+\author{Kohei Yamaguchi}
+\affiliation{%
+  \institution{Graduate school of Engineering, Osaka Prefecture University}
+  \city{Osaka}
+  \state{Japan}
+}
+\email{yamaguchi@m.cs.osakafu-u.ac.jp}
+
+\author{Motoi Iwata}
+\affiliation{%
+  \institution{Graduate school of Engineering, Osaka Prefecture University}
+  \city{Osaka}
+  \state{Japan}
+  }
+\email{iwata@cs.osakafu-u.ac.jp}
+
+\author{Andrew Vargo}
+\affiliation{%
+  \institution{Graduate school of Engineering, Osaka Prefecture University}
+  \city{Osaka}
+  \state{Japan}
+  }
+\email{awv@m.cs.osakafu-u.ac.jp}
+
+\author{Koichi Kise}
+\affiliation{%
+  \institution{Graduate school of Engineering, Osaka Prefecture University}
+  \city{Osaka}
+  \state{Japan}
+  }
+\email{kise@cs.osakafu-u.ac.jp}
+
+
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Yamaguchi, et al.}
+\renewcommand{\shorttitle}{Mobile Vocabulometer: A Context-based Learning Mobile Application...}
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+
+\begin{abstract}
+Vocabulary acquisition is the basis of learning a language, and using flashcards applications is a popular method for learners to memorize the meaning of unknown words. Unfortunately, this method alone is not effective for learners to remember the meaning of words when they appear in sentences. To solve this, we developed the Mobile Vocabulometer which allows users to acquire new vocabulary with context-based learning. Based on the correlation between comprehension and interests, we use the learning materials that adapt to users' interests and language skills. This system harnesses the power of the original Vocabulometer, and modifies it to be effective for mobile learning. An experiment on Japanese university students showed that, overall, learners achieved better results compared to using a simple flashcard application. This result indicates that this system provides a significant advantage over context-free learning systems.
+
+%However, this method is ineffective for learners to remember the meaning of words when they appear in a sentence. In this research, we implemented a new language learning system that automatically generates flashcards with context for English language learners. Based on the correlation between comprehension and interests, we use the learning materials that adapt to users' interests and language skills.  This result indicates the proposed system is effective for acquiring vocabulary. An experiment on Japanese university students showed that overall, learners achieved better results compared using flashcards. This result indicates that this system provides a significant advantage over context-free learning systems. 
+
+%We asked Japanese university students to use the proposed system and usual flashcards. As a result, 16 out of 21 students get a better test score by using the proposed system.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10010405.10010489.10010495</concept_id>
+       <concept_desc>Applied computing~E-learning</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003138.10011767</concept_id>
+       <concept_desc>Human-centered computing~Empirical studies in ubiquitous and mobile computing</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Applied computing~E-learning}
+\ccsdesc[300]{Human-centered computing~Empirical studies in ubiquitous and mobile computing}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{Context-based Learning; Education; Language Learning; Learning System; Mobile Learning; Vocabulary Acquisition}
+
+%% A "teaser" image appears between the author and affiliation
+%% information and the body of the document, and typically spans the
+%% page.
+\begin{comment}
+\begin{teaserfigure}
+  \includegraphics[width=\textwidth]{sampleteaser}
+  \caption{Seattle Mariners at Spring Training, 2010.}
+  \Description{Enjoying the baseball game from the third-base
+  seats. Ichiro Suzuki preparing to bat.}
+  \label{fig:teaser}
+\end{teaserfigure}
+\end{comment}
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+
+\section{INTRODUCTION}
+Mobile devices, such as smartphones, have become an effective tool that allow users to engage in e-learning with almost no restriction on when or where they learn~\cite{anaraki2009flash,basoglu2010comparison}. A flashcard application is a popular form of smartphone applications for learning the English language~\cite{klimova2018evaluation}. A typical disadvantage of flashcard applications is that they do not take the learners' language skills into account. Furthermore, the learning strategy does not support context-based learning, which means that this style of learning may not support memorization or understanding of these words within sentences. Pollard et al.~\cite{pollard2018effects} showed that vocabulary-only learning may not replace the broader benefits of reading books where vocabulary is shown in context. In order retain the value of contextual vocabulary acquisition, we develop a system where we extract words from contexts and generate flashcards in contexts automatically with the goal of helping learners improve their understanding and retention of previously unknown words in a mobile setting. 
+
+It is necessary to use texts that adapt to the learners' English skills in order to facilitate the acquisition of vocabulary within different contexts. This means that it is difficult to guess the meaning of unknown words from complicated texts and it is difficult to find unknown words from simple texts. Additionally, being interested in a topic helps individuals comprehend texts and motivates learners to study~\cite{hidi2001interest,Harackiewicz2016interests}. Based on these theory, Augereau et al.~\cite{augereau2018vocabulometer} proposed a text recommendation system based on learners' interests and English skills called the "Vocabulometer". This system recommends texts to learners by estimating the number of known words the texts include, and uses eye-tracking. The Vocabulometer effective at helping users learn new words, but there are some disadvantages: First, the system does not work on mobile devices because it requires eye-tracking to infer successful learning acquisition. Second, the system defines a word that has been read once as a known word, which means the system does not take forgetting into account. 
+\begin{figure*}[!t]
+    \centering
+    \begin{tabular}{c}
+        \begin{minipage}{0.2\hsize}
+        \subfigure[List of Article]{
+        \includegraphics[scale=0.3]{./fig/textlist.eps}
+        \label{fig:text}}
+        \end{minipage}
+        
+        \begin{minipage}{0.05\hsize}
+        \includegraphics[scale=0.4]{./fig/arrow.eps}
+        \end{minipage}
+        
+        \begin{minipage}{0.2\hsize}
+        \subfigure[Display the Text]{
+        \includegraphics[scale=0.3]{./fig/textview.eps}
+        \label{fig:study}}
+        \end{minipage}
+        
+        \begin{minipage}{0.05\hsize}
+        \includegraphics[scale=0.4]{./fig/arrow.eps}
+        \end{minipage}
+        
+        \begin{minipage}{0.2\hsize}
+        \subfigure[Feedback]{
+        \includegraphics[scale=0.3]{./fig/feedback.eps}
+        \label{fig:feedback}}
+        \end{minipage}
+        
+        \begin{minipage}{0.05\hsize}
+        \includegraphics[scale=0.4]{./fig/arrow.eps}
+        \end{minipage}
+        
+        \begin{minipage}{0.2\hsize}
+        \subfigure[Review]{
+        \includegraphics[scale=0.3]{./fig/flashcard.eps}
+        \label{fig:review}}
+        \end{minipage}
+    \end{tabular}
+    \caption{The Flow of Learning}
+    \label{fig:screen}
+\end{figure*}
+In this research, we implemented a new version of the Vocabulometer as a smartphone application called the "Mobile Vocabulometer". This new mobile implementation automatically creates flashcards from contexts that adapt to learners' interests and English skills. The results of this implementation show that this system is effective in advancing English vocabulary acquisition. However, the impact per user is not universal. In the rest of this paper, we first present the background and implementation of the study. We then discuss the results from the experiment. Finally, we discuss the implications of this work and future directions. 
+\begin{comment}
+\begin{figure*}[!t]
+    \centering
+    \includegraphics[scale=0.32]{./fig/architecture.eps}
+    \caption{Application Architecture}
+    \label{fig:config}
+\end{figure*}
+\end{comment}
+\section{RELATED WORK}
+The original Vocabulometer uses eye-tracking to analyze the reading behavior of learners. This is difficult for mobile devices, as we cannot attach eye-trackers to a smartphone, and in terms of daily use, using wearable eye-trackers is not realistic endeavor. This means we need to utilize eye-tracking software without extra sensors or devices for the Mobile Vocabulometer. Many researchers have investigated an eye-tracking technique using a front camera of a mobile device. Krafka et al.~\cite{krafka2016eye} uses an end-to-end convolutional neural network (CNN) to predict eye gaze. However, the quality of such eye-tracking software is lacking when compared with traditional eye trackers~\cite{feit2017toward}. Due to this problem, it is difficult to use the original Vocabulometer on mobile devices.
+\begin{comment}
+Guo et al.~\cite{guo2018understanding} use the periodic literal eye movement patterns to predict which line the user looks instead of gaze fixations to achieve high accuracy of estimation. Furthermore, they are able to extract some features related to comprehension, concentration, confidence, and engagement. 
+
+
+There is also significant investigations into the efficacy of flashcards. For example, Nayak et al.~\cite{Nayak2017vocab} focused on the testing effect for long term retention. They developed a flashcard application that implements short answer based tests. Settles et al.~\cite{settles2016trainable} focused on the spaced repetition algorithm for reminding unknown words at a certain timing. 
+\end{comment}
+
+Researchers have discussed the effectiveness of context when learners acquire vocabulary with mixed results~\cite{israel2017handbook,shintani2011comparative}. For example, Webb et al.~\cite{webb2007learning} have revealed that contexts by themselves do not affect vocabulary acquisition. However, Hidi et al.~\cite{hidi2001interest} showed that there is a correlation between learners' interests and comprehension. Based on these relationships, we focus on learning vocabulary in contexts which adapt to learners' interests and English skills.
+
+\section{APPLICATION ARCHITECTURE}
+%Figure \ref{fig:config} shows the structure of the new Vocabulometer application. The system provides learning materials based on users' interests and English. Then, the system generates flashcards based on the feedback.
+\begin{comment}
+\begin{figure}[!t]
+    \centering
+    \includegraphics[scale=0.35]{./fig/stats.eps}
+    \caption{Statistic view of learning records}
+    \label{fig:stats}
+\end{figure}
+\end{comment}
+\subsection{Learning English using the Mobile Vocabulometer application}
+Figure~\ref{fig:screen} shows the flow of learning using the Mobile Vocabulometer application and the corresponding section numbers. First, the user registers some topics of their interest and answer the vocabulary questions defined by San Diego Quick Assessment~\cite{la1969graded} to estimate their English skills. Then, the system generates the users' word list based on their estimated vocabulary and the word frequency list. After the setting, the system provides the recommending article list as shown in Figure~\ref{fig:text} to the user. The article list displays the percentage of known words and the number of unknown words in each article. When the users select their preferred article, it will display with their unknown words highlighted as shown in Figure~\ref{fig:study}. After reading the articles, the user send feedback on the subjective difficulty of the article. The system estimates the unknown words and creates a questionnaire form using the feedback and the user's word list as shown in Figure~\ref{fig:feedback}. The words displayed on the question forms are stemmed and removed stop-words such as "a", "the". Based on updated user's word lists, the system provides the recommending article list again. The user's word list is updated every time the user answers the questionnaire form. In other words, the system will improve every time user reads articles.
+
+Next, we will discuss the review functions. The system provides flashcards as shown in Figure~\ref{fig:review} to the user. Words labeled as not memorized by the user display until they are labeled as memorized. The system displays them again at an interval on the Leitner system~\cite{leitner1972so} which is a different spaced repetition algorithm for the effective use of flashcards. The system sends push notification to the user when the flashcards are updated. It encourages the user to use the application.
+
+\subsection{Learning Material}
+The system uses the Newsela~\cite{xu2015problems} dataset for learning materials. Newsela is a web service that provides English articles. It prepares five reading levels per article so that the user can select the learning materials which adapt to their English level.
+We categorized the dataset into seven topics (entertainment,
+economy, environment, lifestyle, politics, sport, and science) so user can select the learning materials which adapt to their interests.
+\begin{comment}
+\subsection{Learning Records}
+Figure~\ref{fig:stats} shows the user interface to check the leaning achievement. The system displays the total number of words read by user through the application. The total number of words is shown in a graph for the past week. The data is updated every time user reads an article.
+\end{comment}
+\section{Experiment}
+We conducted an experiment to test the effectiveness of our method by having participants ($N=21$) learn unknown vocabulary with both a standard flashcard application and our mobile Vocabulometer system. The participants were all Japanese university students (Male:$N=15$, Female:$N=6$). The participants used their own smartphones (iOS: 18, Android: 3). First, participants selected and read articles they were interested in. After that, they answered a questionnaire to label the subjective difficulty and unknown words in each article. They repeated this process until they had collected 24 unknown words. We call these unknown words Wordset A. Then, we 
+selected another 24 words called Wordset B with similar word frequency to the words in Wordset A. This effectively normalizes the difficulty of the Wordsets. All of the words in Wordset B were not used in the articles. The participants confirmed all of these words as unknown words. The participants memorized Wordset A using the proposed system. The participants also memorized Wordset B using only the flashcard function which is part of the proposed system. The participants were asked to memorize these 48 words until they thought they had memorized them "by heart". We conducted four confirmation tests at intervals of 1, 2, 4, and 8 days after they had memorized all the words. The confirmation test consists of 6 words in Wordset A and 6 words in Wordset B, for a total of 12 words. After finishing the data collection from the experiment, we conducted post-experiment interviews to understand why the system worked or failed for different users. 
+\begin{figure}[!t]
+    \centering
+    \includegraphics[scale=0.6]{./fig/result_rev.eps}
+    \caption{Aggregate Test Results for Users: Positive Results Indicate and Aggregate in Favor of Wordset A.}
+    \label{fig:result}
+\end{figure}
+
+\begin{figure}[!t]
+    \centering
+    \includegraphics[scale=0.6]{./fig/resortedcolorchart.eps}
+    \caption{Per Test Day Differences in Memory Between Wordset A and B per User. White = No Difference, Light Green to Dark Green in Ascending Order of a Greater Difference in Favor of Wordset A. Light Blue to Dark Blue in Ascending Order of a Greater Difference in Favor of Wordset B. Users ordered by Day 8 Results.}
+    \label{fig:colorchart}
+\end{figure}
+
+\begin{table}[!t]
+	\centering
+		\caption{Mean and Standard Deviation for Wordset A and Wordset B for all Days of Testing}
+		\begin{tabular}{lllll}
+            \toprule
+            \multirow{2}{*}{Test Day} & Wordset A & Wordset A & Wordset B & Wordset B\\
+             & Mean & STDEV & Mean & STDEV\\
+            \midrule
+            1 & 5.2380 & 1.0910 & 4.2380 & 1.5134\\
+            2 & 5.0000 & 1.2247 & 3.7619 & 1.5461\\
+            4 & 4.2380 & 1.3380 & 3.5238 & 1.6917\\
+            8 & 4.1428 & 1.6212 & 2.7142 & 1.4540\\
+          \bottomrule
+        \end{tabular}
+		\label{test:stats}
+\end{table}
+
+\begin{table}[!t]
+	\centering
+		\caption{Results of a Wilcoxon-Pratt Signed-Rank Test Between Wordset A and B for Each Test Day. *p<0.05, **p<0.01}
+		\begin{tabular}{lll}
+            \toprule
+            Test Day & Z-Score & p-value\\
+            \midrule
+            1 & 3.067 & 0.002162**\\
+            2 & 2.7068 & 0.006794**\\
+            4 & 2.2733 & 0.02301*\\
+            8 & 2.3967 & 0.01654*\\
+          \bottomrule
+        \end{tabular}
+		\label{test:results}
+\end{table}
+
+\section{Result and Discussion}
+Figure~\ref{fig:result} shows the difference between the number of correct answers for Wordset A and Wordset B and the number of people who reached that value. If the horizontal axis is a positive value, it means the participants could learn effectively by using the proposed system as an aggregate. As shown in Figure~\ref{fig:result}, 14 out of the 21 participants got a better score on the confirmation test of Wordset A than that of Wordset B. It is difficult to infer too much from summing the differences, because the few number of samples limits the statistical power of any per-user test, and it does not consider the order of the test.
+
+In order to see if there is a overall statistical impact, we ran a two-tailed Wicoxon-Pratt Signed-Rank Test~\cite{pratt1959remarks}. This test uses dependent pairs of data sutitable for non-parametric distributions. It also does not discount pairs where there is a tie. Table~\ref{test:stats} shows the overall statistic values for Wordset A and B. In all cases, we can see that Wordset A has a greater mean for each test day. Table~\ref{test:results} shows the results for the Wicoxon-Pratt Signed-Rank Test. The results indicate that the Mobile Vocabulometer is effective for inducing better English vocabulary retention. 
+
+However, due to the distributions seen in Figure~\ref{fig:result}, it is necessary to investigate the impact on each user as well. Figure~\ref{fig:colorchart} shows the results for each participant. The results are ordered by the largest difference for Wordset A over Wordset B. White tiles indicate ties, whereas blue tiles indicate Wordset B scoring over Wordset A. The results are interesting, because they do not show a typical progression or pattern. In fact, some users show that the Mobile Vocabulometer has a weaker effect as time goes by. 
+
+
+In order to understand this, we utilized a questionnaire to investigate each user. We found that P7, P13, and P20 felt the learning materials were more difficult than they have expected. Additionally, P7 and P13 felt that there were no interesting materials in the application. It also revealed that English skill of P20 is lower than the other participants. This made the sentences used to memorize Wordset A difficult. It led to the effect of using the contexts that had been diminished. Some participants also reported that the search function which used to memorize Wordset A was slow. This malfunction can cause stress and reduction in the learning effect. This indicates that the Mobile Vocabulometer can and must be fine-tuned to achieve better results for all users.
+
+In summary, we found the following: 
+
+\begin{itemize}
+    \item There is an overall positive effect on English vocabulary retention for the Mobile Vocabulometer for each test day. 
+    \item The impact is not universally positive for all users. 
+    \item Accurately matching difficulty with participant skill is required for the system to be effective. 
+    \item The impact of interesting materials cannot be understated for users. This must be fine-tuned in future versions of the Vocabulometer.
+    \end{itemize}
+
+
+\section{conclusion and future work}
+In this paper, we proposed a new mobile learning system which generates flashcards from contexts that adopts to learners' interests and English skills, called the Mobile Vocabulometer. We experimented that the participants memorize 48 unknown words by the proposed system and usual flashcards. We found that, overall, there was a positive learning effect with the Mobile Vocabulometer in use. However, a mismatch in interest or skill leads to no positive learning effect for participants. In future work, we will try to improve the performance of estimating the difficulty of learning materials. We will also try to improve review functions using the features of comprehension and personalized spaced repetition algorithms. For example, Guo et al.~\cite{guo2018understanding} extract some features related to comprehension, concentration, confidence, and engagement. Additionally, we are planning to engage in a larger-scale experiment with a longer observation period. In the current work, the period of the experiment is short and the number of learned words are relatively small. The results are encouraging and point to a significant effect, but these limitations may be the reason that some participants showed weak learning results. A larger-scale experiment is needed to completely understand the overall effectiveness of the Mobile Vocabulometer.
+
+
+\begin{acks}
+This work was supported in part by the JST CREST (Grant No. JP-MJCR16E1), JSPS Grant-in-Aid for Scientific Research (20H04213), Grand challenge of the Initiative for Life Design Innovation (iLDi), and OPU Keyproject.
+\end{acks}
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-base}
+
+%% Sample format
+\begin{comment}
+ACM's consolidated article template, introduced in 2017, provides a
+consistent \LaTeX\ style for use across ACM publications, and
+incorporates accessibility and metadata-extraction functionality
+necessary for future Digital Library endeavors. Numerous ACM and
+SIG-specific \LaTeX\ templates have been examined, and their unique
+features incorporated into this single new template.
+
+If you are new to publishing with ACM, this document is a valuable
+guide to the process of preparing your work for publication. If you
+have published with ACM before, this document provides insight and
+instruction into more recent changes to the article template.
+
+The ``\verb|acmart|'' document class can be used to prepare articles
+for any ACM publication --- conference or journal, and for any stage
+of publication, from review to final ``camera-ready'' copy, to the
+author's own version, with {\itshape very} few changes to the source.
+
+\section{Template Overview}
+As noted in the introduction, the ``\verb|acmart|'' document class can
+be used to prepare many different kinds of documentation --- a
+double-blind initial submission of a full-length technical paper, a
+two-page SIGGRAPH Emerging Technologies abstract, a ``camera-ready''
+journal article, a SIGCHI Extended Abstract, and more --- all by
+selecting the appropriate {\itshape template style} and {\itshape
+  template parameters}.
+
+This document will explain the major features of the document
+class. For further information, the {\itshape \LaTeX\ User's Guide} is
+available from
+\url{https://www.acm.org/publications/proceedings-template}.
+
+\subsection{Template Styles}
+
+The primary parameter given to the ``\verb|acmart|'' document class is
+the {\itshape template style} which corresponds to the kind of publication
+or SIG publishing the work. This parameter is enclosed in square
+brackets and is a part of the {\verb|documentclass|} command:
+\begin{verbatim}
+  \documentclass[STYLE]{acmart}
+\end{verbatim}
+
+Journals use one of three template styles. All but three ACM journals
+use the {\verb|acmsmall|} template style:
+\begin{itemize}
+\item {\verb|acmsmall|}: The default journal template style.
+\item {\verb|acmlarge|}: Used by JOCCH and TAP.
+\item {\verb|acmtog|}: Used by TOG.
+\end{itemize}
+
+The majority of conference proceedings documentation will use the {\verb|acmconf|} template style.
+\begin{itemize}
+\item {\verb|acmconf|}: The default proceedings template style.
+\item{\verb|sigchi|}: Used for SIGCHI conference articles.
+\item{\verb|sigchi-a|}: Used for SIGCHI ``Extended Abstract'' articles.
+\item{\verb|sigplan|}: Used for SIGPLAN conference articles.
+\end{itemize}
+
+\subsection{Template Parameters}
+
+In addition to specifying the {\itshape template style} to be used in
+formatting your work, there are a number of {\itshape template parameters}
+which modify some part of the applied template style. A complete list
+of these parameters can be found in the {\itshape \LaTeX\ User's Guide.}
+
+Frequently-used parameters, or combinations of parameters, include:
+\begin{itemize}
+\item {\verb|anonymous,review|}: Suitable for a ``double-blind''
+  conference submission. Anonymizes the work and includes line
+  numbers. Use with the \verb|\acmSubmissionID| command to print the
+  submission's unique ID on each page of the work.
+\item{\verb|authorversion|}: Produces a version of the work suitable
+  for posting by the author.
+\item{\verb|screen|}: Produces colored hyperlinks.
+\end{itemize}
+
+This document uses the following string as the first command in the
+source file:
+\begin{verbatim}
+\documentclass[sigconf,authordraft]{acmart}
+\end{verbatim}
+
+\section{Modifications}
+
+Modifying the template --- including but not limited to: adjusting
+margins, typeface sizes, line spacing, paragraph and list definitions,
+and the use of the \verb|\vspace| command to manually adjust the
+vertical spacing between elements of your work --- is not allowed.
+
+{\bfseries Your document will be returned to you for revision if
+  modifications are discovered.}
+
+\section{Typefaces}
+
+The ``\verb|acmart|'' document class requires the use of the
+``Libertine'' typeface family. Your \TeX\ installation should include
+this set of packages. Please do not substitute other typefaces. The
+``\verb|lmodern|'' and ``\verb|ltimes|'' packages should not be used,
+as they will override the built-in typeface families.
+
+\section{Title Information}
+
+The title of your work should use capital letters appropriately -
+\url{https://capitalizemytitle.com/} has useful rules for
+capitalization. Use the {\verb|title|} command to define the title of
+your work. If your work has a subtitle, define it with the
+{\verb|subtitle|} command.  Do not insert line breaks in your title.
+
+If your title is lengthy, you must define a short version to be used
+in the page headers, to prevent overlapping text. The \verb|title|
+command has a ``short title'' parameter:
+\begin{verbatim}
+  \title[short title]{full title}
+\end{verbatim}
+
+\section{Authors and Affiliations}
+
+Each author must be defined separately for accurate metadata
+identification. Multiple authors may share one affiliation. Authors'
+names should not be abbreviated; use full first names wherever
+possible. Include authors' e-mail addresses whenever possible.
+
+Grouping authors' names or e-mail addresses, or providing an ``e-mail
+alias,'' as shown below, is not acceptable:
+\begin{verbatim}
+  \author{Brooke Aster, David Mehldau}
+  \email{dave,judy,steve@university.edu}
+  \email{firstname.lastname@phillips.org}
+\end{verbatim}
+
+The \verb|authornote| and \verb|authornotemark| commands allow a note
+to apply to multiple authors --- for example, if the first two authors
+of an article contributed equally to the work.
+
+If your author list is lengthy, you must define a shortened version of
+the list of authors to be used in the page headers, to prevent
+overlapping text. The following command should be placed just after
+the last \verb|\author{}| definition:
+\begin{verbatim}
+  \renewcommand{\shortauthors}{McCartney, et al.}
+\end{verbatim}
+Omitting this command will force the use of a concatenated list of all
+of the authors' names, which may result in overlapping text in the
+page headers.
+
+The article template's documentation, available at
+\url{https://www.acm.org/publications/proceedings-template}, has a
+complete explanation of these commands and tips for their effective
+use.
+
+Note that authors' addresses are mandatory for journal articles.
+
+\section{Rights Information}
+
+Authors of any work published by ACM will need to complete a rights
+form. Depending on the kind of work, and the rights management choice
+made by the author, this may be copyright transfer, permission,
+license, or an OA (open access) agreement.
+
+Regardless of the rights management choice, the author will receive a
+copy of the completed rights form once it has been submitted. This
+form contains \LaTeX\ commands that must be copied into the source
+document. When the document source is compiled, these commands and
+their parameters add formatted text to several areas of the final
+document:
+\begin{itemize}
+\item the ``ACM Reference Format'' text on the first page.
+\item the ``rights management'' text on the first page.
+\item the conference information in the page header(s).
+\end{itemize}
+
+Rights information is unique to the work; if you are preparing several
+works for an event, make sure to use the correct set of commands with
+each of the works.
+
+The ACM Reference Format text is required for all articles over one
+page in length, and is optional for one-page articles (abstracts).
+
+\section{CCS Concepts and User-Defined Keywords}
+
+Two elements of the ``acmart'' document class provide powerful
+taxonomic tools for you to help readers find your work in an online
+search.
+
+The ACM Computing Classification System ---
+\url{https://www.acm.org/publications/class-2012} --- is a set of
+classifiers and concepts that describe the computing
+discipline. Authors can select entries from this classification
+system, via \url{https://dl.acm.org/ccs/ccs.cfm}, and generate the
+commands to be included in the \LaTeX\ source.
+
+User-defined keywords are a comma-separated list of words and phrases
+of the authors' choosing, providing a more flexible way of describing
+the research being presented.
+
+CCS concepts and user-defined keywords are required for for all
+articles over two pages in length, and are optional for one- and
+two-page articles (or abstracts).
+
+\section{Sectioning Commands}
+
+Your work should use standard \LaTeX\ sectioning commands:
+\verb|section|, \verb|subsection|, \verb|subsubsection|, and
+\verb|paragraph|. They should be numbered; do not remove the numbering
+from the commands.
+
+Simulating a sectioning command by setting the first word or words of
+a paragraph in boldface or italicized text is {\bfseries not allowed.}
+
+\section{Tables}
+
+The ``\verb|acmart|'' document class includes the ``\verb|booktabs|''
+package --- \url{https://ctan.org/pkg/booktabs} --- for preparing
+high-quality tables.
+
+Table captions are placed {\itshape above} the table.
+
+Because tables cannot be split across pages, the best placement for
+them is typically the top of the page nearest their initial cite.  To
+ensure this proper ``floating'' placement of tables, use the
+environment \textbf{table} to enclose the table's contents and the
+table caption.  The contents of the table itself must go in the
+\textbf{tabular} environment, to be aligned properly in rows and
+columns, with the desired horizontal and vertical rules.  Again,
+detailed instructions on \textbf{tabular} material are found in the
+\textit{\LaTeX\ User's Guide}.
+
+Immediately following this sentence is the point at which
+Table~\ref{tab:freq} is included in the input file; compare the
+placement of the table here with the table in the printed output of
+this document.
+
+\begin{table}
+  \caption{Frequency of Special Characters}
+  \label{tab:freq}
+  \begin{tabular}{ccl}
+    \toprule
+    Non-English or Math&Frequency&Comments\\
+    \midrule
+    \O & 1 in 1,000& For Swedish names\\
+    $\pi$ & 1 in 5& Common in math\\
+    \$ & 4 in 5 & Used in business\\
+    $\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
+  \bottomrule
+\end{tabular}
+\end{table}
+
+To set a wider table, which takes up the whole width of the page's
+live area, use the environment \textbf{table*} to enclose the table's
+contents and the table caption.  As with a single-column table, this
+wide table will ``float'' to a location deemed more
+desirable. Immediately following this sentence is the point at which
+Table~\ref{tab:commands} is included in the input file; again, it is
+instructive to compare the placement of the table here with the table
+in the printed output of this document.
+
+\begin{table*}
+  \caption{Some Typical Commands}
+  \label{tab:commands}
+  \begin{tabular}{ccl}
+    \toprule
+    Command &A Number & Comments\\
+    \midrule
+    \texttt{{\char'134}author} & 100& Author \\
+    \texttt{{\char'134}table}& 300 & For tables\\
+    \texttt{{\char'134}table*}& 400& For wider tables\\
+    \bottomrule
+  \end{tabular}
+\end{table*}
+
+\section{Math Equations}
+You may want to display math equations in three distinct styles:
+inline, numbered or non-numbered display.  Each of the three are
+discussed in the next sections.
+
+\subsection{Inline (In-text) Equations}
+A formula that appears in the running text is called an inline or
+in-text formula.  It is produced by the \textbf{math} environment,
+which can be invoked with the usual
+\texttt{{\char'134}begin\,\ldots{\char'134}end} construction or with
+the short form \texttt{\$\,\ldots\$}. You can use any of the symbols
+and structures, from $\alpha$ to $\omega$, available in
+\LaTeX~\cite{Lamport:LaTeX}; this section will simply show a few
+examples of in-text equations in context. Notice how this equation:
+\begin{math}
+  \lim_{n\rightarrow \infty}x=0
+\end{math},
+set here in in-line math style, looks slightly different when
+set in display style.  (See next section).
+
+\subsection{Display Equations}
+A numbered display equation---one set off by vertical space from the
+text and centered horizontally---is produced by the \textbf{equation}
+environment. An unnumbered display equation is produced by the
+\textbf{displaymath} environment.
+
+Again, in either environment, you can use any of the symbols and
+structures available in \LaTeX\@; this section will just give a couple
+of examples of display equations in context.  First, consider the
+equation, shown as an inline equation above:
+\begin{equation}
+  \lim_{n\rightarrow \infty}x=0
+\end{equation}
+Notice how it is formatted somewhat differently in
+the \textbf{displaymath}
+environment.  Now, we'll enter an unnumbered equation:
+\begin{displaymath}
+  \sum_{i=0}^{\infty} x + 1
+\end{displaymath}
+and follow it with another numbered equation:
+\begin{equation}
+  \sum_{i=0}^{\infty}x_i=\int_{0}^{\pi+2} f
+\end{equation}
+just to demonstrate \LaTeX's able handling of numbering.
+
+\section{Figures}
+
+The ``\verb|figure|'' environment should be used for figures. One or
+more images can be placed within a figure. If your figure contains
+third-party material, you must clearly identify it as such, as shown
+in the example below.
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=\linewidth]{sample-franklin}
+  \caption{1907 Franklin Model D roadster. Photograph by Harris \&
+    Ewing, Inc. [Public domain], via Wikimedia
+    Commons. (\url{https://goo.gl/VLCRBB}).}
+  \Description{The 1907 Franklin Model D roadster.}
+\end{figure}
+
+Your figures should contain a caption which describes the figure to
+the reader. Figure captions go below the figure. Your figures should
+{\bfseries also} include a description suitable for screen readers, to
+assist the visually-challenged to better understand your work.
+
+Figure captions are placed {\itshape below} the figure.
+
+\subsection{The ``Teaser Figure''}
+
+A ``teaser figure'' is an image, or set of images in one figure, that
+are placed after all author and affiliation information, and before
+the body of the article, spanning the page. If you wish to have such a
+figure in your article, place the command immediately before the
+\verb|\maketitle| command:
+\begin{verbatim}
+  \begin{teaserfigure}
+    \includegraphics[width=\textwidth]{sampleteaser}
+    \caption{figure caption}
+    \Description{figure description}
+  \end{teaserfigure}
+\end{verbatim}
+
+\section{Citations and Bibliographies}
+
+The use of \BibTeX\ for the preparation and formatting of one's
+references is strongly recommended. Authors' names should be complete
+--- use full first names (``Donald E. Knuth'') not initials
+(``D. E. Knuth'') --- and the salient identifying features of a
+reference should be included: title, year, volume, number, pages,
+article DOI, etc.
+
+The bibliography is included in your source document with these two
+commands, placed just before the \verb|\end{document}| command:
+\begin{verbatim}
+  \bibliographystyle{ACM-Reference-Format}
+  \bibliography{bibfile}
+\end{verbatim}
+where ``\verb|bibfile|'' is the name, without the ``\verb|.bib|''
+suffix, of the \BibTeX\ file.
+
+Citations and references are numbered by default. A small number of
+ACM publications have citations and references formatted in the
+``author year'' style; for these exceptions, please include this
+command in the {\bfseries preamble} (before
+``\verb|\begin{document}|'') of your \LaTeX\ source:
+\begin{verbatim}
+  \citestyle{acmauthoryear}
+\end{verbatim}
+
+  Some examples.  A paginated journal article \cite{Abril07}, an
+  enumerated journal article \cite{Cohen07}, a reference to an entire
+  issue \cite{JCohen96}, a monograph (whole book) \cite{Kosiur01}, a
+  monograph/whole book in a series (see 2a in spec. document)
+  \cite{Harel79}, a divisible-book such as an anthology or compilation
+  \cite{Editor00} followed by the same example, however we only output
+  the series if the volume number is given \cite{Editor00a} (so
+  Editor00a's series should NOT be present since it has no vol. no.),
+  a chapter in a divisible book \cite{Spector90}, a chapter in a
+  divisible book in a series \cite{Douglass98}, a multi-volume work as
+  book \cite{Knuth97}, an article in a proceedings (of a conference,
+  symposium, workshop for example) (paginated proceedings article)
+  \cite{Andler79}, a proceedings article with all possible elements
+  \cite{Smith10}, an example of an enumerated proceedings article
+  \cite{VanGundy07}, an informally published work \cite{Harel78}, a
+  doctoral dissertation \cite{Clarkson85}, a master's thesis:
+  \cite{anisi03}, an online document / world wide web resource
+  \cite{Thornburg01, Ablamowicz07, Poker06}, a video game (Case 1)
+  \cite{Obama08} and (Case 2) \cite{Novak03} and \cite{Lee05} and
+  (Case 3) a patent \cite{JoeScientist001}, work accepted for
+  publication \cite{rous08}, 'YYYYb'-test for prolific author
+  \cite{SaeediMEJ10} and \cite{SaeediJETC10}. Other cites might
+  contain 'duplicate' DOI and URLs (some SIAM articles)
+  \cite{Kirschmer:2010:AEI:1958016.1958018}. Boris / Barbara Beeton:
+  multi-volume works as books \cite{MR781536} and \cite{MR781537}. A
+  couple of citations with DOIs:
+  \cite{2004:ITE:1009386.1010128,Kirschmer:2010:AEI:1958016.1958018}. Online
+  citations: \cite{TUGInstmem, Thornburg01, CTANacmart}. Artifacts:
+  \cite{R} and \cite{UMassCitations}.
+
+\section{Acknowledgments}
+
+Identification of funding sources and other support, and thanks to
+individuals and groups that assisted in the research and the
+preparation of the work should be included in an acknowledgment
+section, which is placed just before the reference section in your
+document.
+
+This section has a special environment:
+\begin{verbatim}
+  \begin{acks}
+  ...
+  \end{acks}
+\end{verbatim}
+so that the information contained therein can be more easily collected
+during the article metadata extraction phase, and to ensure
+consistency in the spelling of the section heading.
+
+Authors should not prepare this section as a numbered or unnumbered {\verb|\section|}; please use the ``{\verb|acks|}'' environment.
+
+\section{Appendices}
+
+If your work needs an appendix, add it before the
+``\verb|\end{document}|'' command at the conclusion of your source
+document.
+
+Start the appendix with the ``\verb|appendix|'' command:
+\begin{verbatim}
+  \appendix
+\end{verbatim}
+and note that in the appendix, sections are lettered, not
+numbered. This document has two appendices, demonstrating the section
+and subsection identification method.
+
+\section{SIGCHI Extended Abstracts}
+
+The ``\verb|sigchi-a|'' template style (available only in \LaTeX\ and
+not in Word) produces a landscape-orientation formatted article, with
+a wide left margin. Three environments are available for use with the
+``\verb|sigchi-a|'' template style, and produce formatted output in
+the margin:
+\begin{itemize}
+\item {\verb|sidebar|}:  Place formatted text in the margin.
+\item {\verb|marginfigure|}: Place a figure in the margin.
+\item {\verb|margintable|}: Place a table in the margin.
+\end{itemize}
+
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+To Robert, for the bagels and explaining CMYK and color spaces.
+\end{acks}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{sample-base}
+
+%%
+%% If your work has an appendix, this is the place to put it.
+\appendix
+
+\section{Research Methods}
+
+\subsection{Part One}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi
+malesuada, quam in pulvinar varius, metus nunc fermentum urna, id
+sollicitudin purus odio sit amet enim. Aliquam ullamcorper eu ipsum
+vel mollis. Curabitur quis dictum nisl. Phasellus vel semper risus, et
+lacinia dolor. Integer ultricies commodo sem nec semper.
+
+\subsection{Part Two}
+
+Etiam commodo feugiat nisl pulvinar pellentesque. Etiam auctor sodales
+ligula, non varius nibh pulvinar semper. Suspendisse nec lectus non
+ipsum convallis congue hendrerit vitae sapien. Donec at laoreet
+eros. Vivamus non purus placerat, scelerisque diam eu, cursus
+ante. Etiam aliquam tortor auctor efficitur mattis.
+
+\section{Online Resources}
+
+Nam id fermentum dui. Suspendisse sagittis tortor a nulla mollis, in
+pulvinar ex pretium. Sed interdum orci quis metus euismod, et sagittis
+enim maximus. Vestibulum gravida massa ut felis suscipit
+congue. Quisque mattis elit a risus ultrices commodo venenatis eget
+dui. Etiam sagittis eleifend elementum.
+
+Nam interdum magna at lectus dignissim, ac dignissim lorem
+rhoncus. Maecenas eu arcu ac neque placerat aliquam. Nunc pulvinar
+massa et mattis lacinia.
+\end{comment}
+\end{document}
+\endinput
+%%
+%% End of file `sample-authordraft.tex'.

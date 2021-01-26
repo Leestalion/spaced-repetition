@@ -11,8 +11,6 @@ npm-debug.*
 .idea/*
 web-build/
 functions/
-src/screens/AlgoliaSearchScreen.js
-src/screens/LandingScreen.js
 ServiceAccountKey.*
 # macOS
 .DS_Store

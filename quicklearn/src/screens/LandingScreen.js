@@ -11,15 +11,15 @@ class LandingScreen extends React.Component {
     
     componentDidMount(){
         if (!firebase.apps.length) {
-            firebase.initializedapp({
-		apiKey: "AIzaSyCMOmW_G8cNmZUP8cxmYr8Xfw-7bVhL9HY",
-		authDomain: "spaced-repetition-51bdc.firebaseapp.com",
-		projectId: "spaced-repetition-51bdc",
-		storageBucket: "spaced-repetition-51bdc.appspot.com",
-		messagingSenderId: "721915131287",
-		appId: "1:721915131287:web:c921649be76d0b01ba00d2",
-		measurementId: "G-QD0BB2G9X9"
-	    });
+            firebase.initializeApp({
+                apiKey: "AIzaSyCMOmW_G8cNmZUP8cxmYr8Xfw-7bVhL9HY",
+                authDomain: "spaced-repetition-51bdc.firebaseapp.com",
+                projectId: "spaced-repetition-51bdc",
+                storageBucket: "spaced-repetition-51bdc.appspot.com",
+                messagingSenderId: "721915131287",
+                appId: "1:721915131287:web:c921649be76d0b01ba00d2",
+                measurementId: "G-QD0BB2G9X9"
+              });
         }
 
 /* 

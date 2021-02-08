@@ -141,7 +141,7 @@ class LoginScreen extends React.Component {
                     this.props.login(user);
                     //var URL = 'https://script.google.com/macros/s/AKfycbzx0zk0UFWRLTpAGvsDIaBJMBox2CAs5999Iiz5-58GDyCecuY/exec?uid=' + user.uid + '&message=I login!'
                     //fetch(URL)
-                    console.log("send notification")
+                    //console.log("send notification")
                     this.props.navigation.navigate('Main')
                 }
                 
@@ -177,7 +177,11 @@ class LoginScreen extends React.Component {
                                  style={styles.backgroundLogin}/>
                                 
                     
-                        <KeyboardAvoidingView>
+                        <KeyboardAvoidingView
+                            enabled
+                            keyboardVerticalOffset={Platform.OS === 'ios' ? 50 : 24 }
+                            behavior= {Platform.OS === 'ios' ? "padding" : null}
+                        >
 
                             <Text style={styles.title}>TRAIN YOUR ENGLISH SKILLS</Text>
                             <Form>

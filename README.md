@@ -29,3 +29,5 @@
 - Modify the Yamaguchi app to add "number of success" field for each word in the database
 
 - Add a python script that calculate the next review time for each word ater it is reviewed (or bunch of words) OR run the script on every words on a fix time everyday.
+
+- Learn how to interact between the web API hosted with heroku (python script) and the nodejs application (quicklearn)

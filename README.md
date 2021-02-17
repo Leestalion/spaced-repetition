@@ -42,4 +42,4 @@
 
 - Add a python script that calculate the next review time for each word ater it is reviewed (or bunch of words) OR run the script on every words on a fix time everyday.
 
-- Continue the connection between 
+- Continue the connection between the flask app and nodejs app.

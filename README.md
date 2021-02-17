@@ -29,3 +29,17 @@
 - Add a python script that calculate the next review time for each word ater it is reviewed (or bunch of words) OR run the script on every words on a fix time everyday.
 
 - Learn how to interact between the web API hosted with heroku (python script) and the nodejs application (quicklearn)
+
+<h2>02/10 meeting</h2>
+
+<h3>Quicklearn App</h3>
+
+- Read many documentations about how to connect API hosted app and nodejs app
+
+- Created a GAS to access heroku hosted app [here](https://script.google.com/d/1DnivTZO9pod-5gY_In_n2e28BCHicxYjaKYZyBWJP0vmZ7fHQJOGM3AR/edit?usp=sharing)
+
+<h3>Next Goal</h3>
+
+- Add a python script that calculate the next review time for each word ater it is reviewed (or bunch of words) OR run the script on every words on a fix time everyday.
+
+- Continue the connection between 

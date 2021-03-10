@@ -50,7 +50,7 @@
 
 - The flask application has been updated and is working to update the next review time on each evaluation done by the user on the quicklearn app (vocabulometer adapted for flashcard).
 
-<h3>Cloud Firestore from Firebase</h3>
+<h3>Firebase Database</h3>
 
 - Adding 2 variables to the noSQL database : 'nextTime', which is the next review time in days, and 'forgettingRate', which is a variable needed to compute more accurately the next reviewing time.
 

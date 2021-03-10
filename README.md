@@ -54,8 +54,14 @@
 
 - Adding 2 variables to the noSQL database : 'nextTime', which is the next review time in days, and 'forgettingRate', which is a variable needed to compute more accurately the next reviewing time.
 
+<h3>Quicklearn App</h3>
+
+- Understood the quicklearn app and how Expo works.
+
 <h3>Next Goal</h3>
 
 - Update Flask application to take into account the GAS (google apps script) daily update.
+
+- Add a word selection method in the quicklearn application to select words which has '0' as their 'nextTime' variable (meaning which words has to be reviewed that day).
 
 - Discuss about the possible implementation of the 'word difficulty' variable in the database.

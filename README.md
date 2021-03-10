@@ -43,3 +43,19 @@
 - Add a python script that calculate the next review time for each word ater it is reviewed (or bunch of words) OR run the script on every words on a fix time everyday.
 
 - Continue the connection between the flask app and nodejs app.
+
+<h2>03/10 meeting</h2>
+
+<h3>Flask API</h3>
+
+- The flask application has been updated and is working to update the next review time on each evaluation done by the user on the quicklearn app (vocabulometer adapted for flashcard).
+
+<h3>Cloud Firestore from Firebase</h3>
+
+- Adding 2 variables to the noSQL database : 'nextTime', which is the next review time in days, and 'forgettingRate', which is a variable needed to compute more accurately the next reviewing time.
+
+<h3>Next Goal</h3>
+
+- Update Flask application to take into account the GAS (google apps script) daily update.
+
+- Discuss about the possible implementation of the 'word difficulty' variable in the database.

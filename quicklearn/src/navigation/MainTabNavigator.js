@@ -5,8 +5,6 @@ import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { FontAwesome5 } from '@expo/vector-icons'
 import TabBarIcon from '../components/TabBarIcon';
 import TextSelectScreen from '../screens/TextSelectScreen';
-import TitleListScreen from '../screens/TitleListScreen';
-import OnlineTestScreen from  '../screens/OnlineTestScreen';
 import StatsScreen from '../screens/StatsScreen';
 import Colors from '../../constants/Colors';
 
@@ -25,27 +23,6 @@ TextStack.navigationOptions = {
     />
   ),
 };
-
-const OnlineTestStack = createStackNavigator({
-  OnlineTest:{
-    screen: OnlineTestScreen,
-    navigationOptions: {
-      headerShown: false
-    }
-  },
-});
-
-OnlineTestStack.navigationOptions = {
-  headerShown: false,
-  tabBarLabel: 'Test',
-  tabBarIcon: ({ focused }) => (
-    <TabBarIcon
-      focused={focused}
-      name={'envelope-open-text'}
-    />
-  ),
-};
-
 
 const StatsStack = createStackNavigator({
   Stats: {
@@ -69,13 +46,6 @@ StatsStack.navigationOptions = {
 export default createBottomTabNavigator(
   {
     TextStack,
-    //FlashcardStack,    
-    //FillinBlankStack,
-    //OnlineTestStack,
-    //SearchStack,   
-    //NewsBrowseStack, 
-    //CameraStack,
-    //VideoStack,
     StatsStack,    
   },
   {

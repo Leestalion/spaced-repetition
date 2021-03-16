@@ -47,11 +47,12 @@ import AppSpinner from '../components/AppSpinner';
 import BackHandlerWrapper from '../components/BackHandlerWrapper';
 import platform from '../../native-base-theme/variables/platform';
 import {logout} from "../actions";
-import firebase from 'firebase'
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 
 class TextSelectScreen extends React.Component {
   static navigationOptions = {
-    header: null,
+    headerShown: false,
   };
 
   constructor(props) {
@@ -79,7 +80,8 @@ class TextSelectScreen extends React.Component {
       makemail:false,
       modalVisible: false,
       delete: false,
-      loading: true,
+      //loading: true,
+      loading: false,
       message: "",
     }
     if (Platform.OS !== 'web') {
@@ -90,9 +92,6 @@ class TextSelectScreen extends React.Component {
   }
 
   componentDidMount() {
-    data = require('../articles/test.json');
-    list = [data.a,data.b,data.c,data.d,data.e,data.f,data.g,data.h,data.i]
-    this.setState({dataSource:data.a})
     console.log('const:' + this.state.const);
     
     //if(this.state.const == true){
@@ -111,7 +110,7 @@ class TextSelectScreen extends React.Component {
           }
         }
       });
-    //}
+    //}*/
   }
 /*
   requiredMessage = input => {
@@ -191,61 +190,10 @@ class TextSelectScreen extends React.Component {
     if(this.props.user.uid == undefined){
       this.props.navigation.navigate('Auth')
     }
-
-      firebase.firestore().collection("users").doc(this.props.user.uid).get()
-    .then(async(doc) => {
-      if (!doc.exists) {
-        this.props.navigation.navigate('SetWordList',{mode: 0})
-      }
-      else{
-        //await this.getDeviceToken();
-
-        //Notifications.addListener(this.subscribeNotification);
-
-        
-        var obj = doc.data().userinfo;
-
-        let data = doc.data().wordlist
-
-        let keys = Object.keys(data);
-        
-        
-        
-        /*for(var i = 0;i < keys.length;i++){
-          if(data[keys[i]].view ==true){
-            if(data[keys[i]].original){
-              console.log(data[keys[i]].original)
-            }
-            else{
-              console.log(keys[i])
-            }
-            console.log(keys[i])
-          }
-        }
-        for(var i = 0;i < keys.length;i++){
-          if(data[keys[i]].view ==true){
-            console.log(data[keys[i]].sentence)
-          }
-        }
-        for(var i = 0;i < keys.length;i++){
-          if(data[keys[i]].view ==true){
-            //console.log(data[keys[i]].translateSentence)
-            console.log(data[keys[i]].translateWord)
-          }
-        }
-        for(var i = 0;i < keys.length;i++){
-          if(data[keys[i]].view ==true){
-            console.log(data[keys[i]].rank)
-          }
-        }*/
-        this.setState({skill:obj.skill, native: obj.native, loading: false,deviceToken: doc.data().deviceToken})
-      }
-    })
-    .catch(err => {
-      console.log('Error getting document', err);
-      this.props.navigation.navigate('SetWordList',{mode: 0})
-    });  
-    
+    else{
+      console.log("aaa")
+      this.setState({loading: false})
+    }
   }
 
     isContinue = async() => {
@@ -433,13 +381,13 @@ class TextSelectScreen extends React.Component {
         </View>*/
 const mapStateToProps = (state) => {
   const {
+    info,
     token,
     user,
   } = state.user;
-  
-  //const {token} = user;
 
   return {
+    info,
     token,
     user,
   }

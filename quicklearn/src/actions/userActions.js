@@ -4,9 +4,10 @@ import {
     LOGIN,
     LOGIN_SUCCESS,
     FETCH_USER_INFOS,
+    SETUP,
 } from '../actions/types';
 import {NavigationActions} from 'react-navigation';
-
+import firebase from 'firebase'
 const BASE_URL = "http://vocabulometer.herokuapp.com/api";
 
 const navigateToHome =
@@ -25,17 +26,29 @@ const redirectCreate =
     });
 
 
+export const setup = (user) => { // TODO get token in redux in component that calls this fetch and pass is as an argument   
+    return (dispatch) => {
+            dispatch({
+                type: SETUP,
+                payload: {
+                    user: user.user,
+                    token: user.token,
+                }
+            })
+        }
+    
+};
 
-
-export const login = (user) => { // TODO get token in redux in component that calls this fetch and pass is as an argument   
-    //console.log('propslogin' + user);
-    console.log('login');
-    return {        
+export const login = (user) => { // TODO get token in redux in component that calls this fetch and pass is as an argument
+    return {
         type: LOGIN_SUCCESS,
         payload: {
             user: user.user,
             token: user.token,
+            info: user.info,
         }
+    }
+        
         /*
 
         fetch(`${BASE_URL}/users/auth/local`, {
@@ -75,7 +88,7 @@ export const login = (user) => { // TODO get token in redux in component that ca
                     payload: 'Passwords incorrects',
                 });
             })*/
-    }
+    
 };
 
 

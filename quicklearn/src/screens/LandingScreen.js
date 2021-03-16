@@ -2,7 +2,8 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Base64 from '../helpers/atob';
 import { Container } from 'native-base';
-import firebase from 'firebase';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
 import {login} from '../actions';
 import AppSpinner from '../components/AppSpinner';
 import {Notifications, DangerZone } from 'expo';
@@ -74,8 +75,6 @@ class LandingScreen extends React.Component {
                     }
                     else{
                         this.props.login({user})
-                        //var URL = 'https://script.google.com/macros/s/AKfycbzx0zk0UFWRLTpAGvsDIaBJMBox2CAs5999Iiz5-58GDyCecuY/exec?uid=' + user.uid + '&message=I login!'
-                        //fetch(URL)
                         this.props.navigation.navigate('App')
                     }
                   })
@@ -100,13 +99,13 @@ class LandingScreen extends React.Component {
 
 const mapStateToProps = (state) => {
     const {
+      info,
       token,
       user,
     } = state.user;
-    
-    //const {token} = user;
   
     return {
+      info,
       token,
       user,
     }

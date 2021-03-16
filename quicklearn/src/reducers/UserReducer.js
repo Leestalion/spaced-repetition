@@ -4,10 +4,12 @@ import {
     LOGIN,
     LOGIN_SUCCESS,
     FETCH_USER_INFOS,
+    SETUP,
 } from '../actions/types';
 
 const INITIAL_STATE = {
     user: {},
+    info: {},
     loginLoading: false,
     userStatsLoading: true,
     token: null,
@@ -19,7 +21,7 @@ export default function (state = INITIAL_STATE, action) {
         case LOGIN:
             return {...state, loginLoading: true, errorMessage: ''};
         case LOGIN_SUCCESS:
-            return {...state, token: action.payload.token, user: action.payload.user, loginLoading: false};
+            return {...state, info: action.payload.info, token: action.payload.token, user: action.payload.user, loginLoading: false};
         case LOGIN_FAIL:
             return {...state, errorMessage: action.payload, loginLoading: false};
         case LOGOUT_SUCCESS:
@@ -35,6 +37,8 @@ export default function (state = INITIAL_STATE, action) {
                 },
                 userStatsLoading: false,
             };
+        case SETUP:
+            return {...state, token: action.payload.token, user: action.payload.user, loginLoading: false};
         default:
             return state;
     }

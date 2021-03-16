@@ -9,10 +9,6 @@ import FlashcardScreen from  '../screens/FlashcardScreen';
 import ContactScreen from '../screens/ContactScreen';
 import LandingScreen from '../screens/LandingScreen';
 import LoginScreen from "../screens/LoginScreen";
-import TextViewScreen from "../screens/TextViewScreen";
-import NewsViewScreen from "../screens/NewsViewScreen";
-import RatingScreen from "../screens/RatingScreen";
-import SetWordListScreen from "../screens/SetWordListScreen";
 
 const AppStack = createStackNavigator(
   {
@@ -38,24 +34,8 @@ const AppStack = createStackNavigator(
         },
       })
     },
-
-    NewsView: {
-      screen: NewsViewScreen,
-      navigationOptions: () => ({
-        headerTitle: () => <Logo/>, // Logo instead of header title
-        headerStyle: {
-            backgroundColor: '#FFF'
-        },
-      })
-    },
-
-    Rating: {
-      screen: RatingScreen,
-    },
   
-    Contact: ContactScreen,   
-
-    SetWordList: SetWordListScreen,
+    Contact: ContactScreen,
   },
 
   {

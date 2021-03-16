@@ -49,7 +49,6 @@ import BackHandlerWrapper from '../components/BackHandlerWrapper';
 import AppSpinner from '../components/AppSpinner';
 import firebase from 'firebase'
 import algoliasearch from 'algoliasearch';
-import { InstantSearch, connectInfiniteHits, connectSearchBox } from 'react-instantsearch-native';
 import SearchBox from '../algolia/SearchBox';
 import InfiniteHits from '../algolia/InfiniteHits';
 
@@ -122,6 +121,8 @@ class FlashcardScreen extends Component {
                   var r = Math.floor(Math.random() * final.length);
                   keys.push(final[r])
                 }
+
+                evaluation = new Array();
                 
                 
                 await this.setState({setcard: true, isNull:false,data: data, refreshing: false})
@@ -129,14 +130,13 @@ class FlashcardScreen extends Component {
                 
                 console.log(keys)
                 console.log('keyset')
-                
-            }
+            };
         })
         .catch(err => {
             console.log('Error getting document', err);
-            this.setState({error: err})
+            this.setState({error: err});
         });
-    }
+    };
 
     doTranslate(text){
       this.setState({loadingWord:true})
@@ -152,6 +152,10 @@ class FlashcardScreen extends Component {
         else{
           cards[keys[cardnum]].remember = 1
         }
+        evaluation.push(1);
+      }
+      else {
+        evaluation.push(0);
       }
 
       //console.log(cards[keys[cardnum]].translateWord)
@@ -166,24 +170,68 @@ class FlashcardScreen extends Component {
       cards[keys[cardnum]].repetition += 1
       cards[keys[cardnum]].lastTime = name
       cardnum += 1
-      
-      console.log("cardnum: " + cardnum + " keys.length: " + keys.length)
 
       if(cardnum == 3){
-        const wordlist = cards
-        var that = this
-        firebase.firestore().collection("users").doc(this.props.user.uid).set({wordlist},{merge:true})
-        .then(
-            Alert.alert(
-              "Good job!",
-              "Success to save the data",
-              [                
-                { text: "OK", onPress: () => that.props.navigation.popToTop() }
-              ],
-              { cancelable: false }
-            )
-              
-        )
+
+        var formBody = [];
+        for (var i=0; i<3; i++){
+          var key = keys[i];
+          var val = cards[keys[i]];
+          console.log(evaluation[i])
+          var lastEval = evaluation[i];
+          formBody.push({label: key, value: val, lastEval: lastEval});
+        }
+        console.log("here");
+        console.log(formBody);
+
+        fetch('https://spaced-repetition-opu.herokuapp.com/', {
+          method: 'POST',
+          headers: {
+            Accept: 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formBody),
+        })
+        .then((response) => response.json())
+        //If response is in json then in success
+        .then((responseJson) => {
+          // Success
+          console.log(responseJson);
+
+          for (var i=0; i<3; i++){
+            var nextTime = responseJson[i]['nextTime'];
+            var forgettingRate = responseJson[i]['forgettingRate'];
+            console.log(nextTime);
+            console.log(forgettingRate);
+            cards[keys[i]].nextTime = nextTime;
+            cards[keys[i]].forgettingRate = forgettingRate;
+          }
+
+          console.log("cardnum: " + cardnum + " keys.length: " + keys.length)
+
+          const wordlist = cards
+          var that = this
+
+          firebase.firestore().collection("users").doc(this.props.user.uid).set({wordlist},{merge:true})
+          .then(
+              Alert.alert(
+                "Good job!",
+                "Success to save the data",
+                [                
+                  { text: "OK", onPress: () => that.props.navigation.popToTop() }
+                ],
+                { cancelable: false }
+              )
+          )
+
+
+
+        })
+        //If response is not in json then error
+        .catch((error) => {
+          //Error
+          console.log(error);
+        })
       }
     }
 

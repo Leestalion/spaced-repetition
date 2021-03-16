@@ -206,7 +206,7 @@ doAlert = () => {
               // Handle unsuccessful uploads
           }, function(){
             console.log('put data')
-            popToTop()
+            that.props.navigation.navigate('Landing')
           })
         /*
         var listlength = Object.keys(wordfreqlist).length
@@ -275,7 +275,7 @@ doAlert = () => {
       }
       else{
         firebase.firestore().collection("users").doc(this.props.user.uid).update({userinfo})
-        popToTop()
+        that.props.navigation.navigate('Landing')
       }
   }
 

@@ -166,14 +166,16 @@ const styles = StyleSheet.create({
 
 const mapStateToProps = (state) => {
     const {
-        token,
-        user,
+      info,
+      token,
+      user,
     } = state.user;
-
+  
     return {
-        token,
-        user,
-    };
-};
+      info,
+      token,
+      user,
+    }
+  };
 
 export default connect(mapStateToProps)(StatsScreen)

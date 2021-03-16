@@ -12,6 +12,7 @@ export const LOGOUT_SUCCESS = 'logout_success';
 export const LOGIN_SUCCESS = 'login_sucess';
 export const LOGIN_FAIL = 'login_fail';
 export const LOGIN = 'login';
+export const SETUP = 'setup';
 export const CREATE_NEW_ACCOUNT = 'createAccount'
 export const CREATE_SUCCESS = 'createSuccess'
 export const CREATE_FAIL = 'createFail'

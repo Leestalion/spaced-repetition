@@ -76,3 +76,5 @@
 <h3>Next Goal</h3>
 
 - Add a word selection method in the quicklearn application to select words which has '0' as their 'nextTime' variable (meaning which words has to be reviewed that day).
+
+- Solve Google App Script Problem

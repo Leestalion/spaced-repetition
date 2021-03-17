@@ -65,3 +65,14 @@
 - Add a word selection method in the quicklearn application to select words which has '0' as their 'nextTime' variable (meaning which words has to be reviewed that day).
 
 - Discuss about the possible implementation of the 'word difficulty' variable in the database.
+
+
+<h2>03/17 meeting</h2>
+
+<h3>Flask API</h3>
+
+- Update for Google App Script support;
+
+<h3>Next Goal</h3>
+
+- Add a word selection method in the quicklearn application to select words which has '0' as their 'nextTime' variable (meaning which words has to be reviewed that day).

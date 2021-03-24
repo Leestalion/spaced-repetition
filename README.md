@@ -76,7 +76,7 @@
 
 <h2>03/24 meeting</h2>
 
-The application seems to work. It is available at the following link on your phone (you need to have expo installed and an expo account) : [click here](https://expo.io/@lestalion/quicklearn)
+The application seems to work. It is available at the following link on your phone (you need to have expo installed and an expo account) : [click here](https://expo.io/@lestalion/quicklearn).
 However, further tests are needed to see if it works completely: 
 
 - Use the application during several days once a day (the goal is to see if the words that have to be reviwed are in fact reviewed).

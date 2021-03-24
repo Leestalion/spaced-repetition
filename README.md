@@ -77,7 +77,7 @@
 <h2>03/24 meeting</h2>
 
 The application seems to work. It is available at the following link on your phone (you need to have expo installed and an expo account) : https://expo.io/@lestalion/quicklearn.
-![home page](https://github.com/Leestalion/spaced-repetition/blob/main/image/home.jpg?raw=true)
+![home page](https://github.com/Leestalion/spaced-repetition/blob/main/images/home.jpg?raw=true)
 
 However, further tests are needed to see if it works completely: 
 

@@ -78,6 +78,10 @@
 
 The application seems to work. It is available at the following link on your phone (you need to have expo installed and an expo account) : https://expo.io/@lestalion/quicklearn.
 ![home page](https://github.com/Leestalion/spaced-repetition/blob/main/images/home.jpg?raw=true)
+<p align="center">
+  <img src="https://github.com/Leestalion/spaced-repetition/blob/main/images/home.jpg" width="350" title="hover text">
+  <img src="https://github.com/Leestalion/spaced-repetition/blob/main/images/home.jpg" width="350" alt="accessibility text">
+</p>
 
 However, further tests are needed to see if it works completely: 
 

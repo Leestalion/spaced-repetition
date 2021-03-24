@@ -78,3 +78,18 @@
 - Add a word selection method in the quicklearn application to select words which has '0' as their 'nextTime' variable (meaning which words has to be reviewed that day).
 
 - Solve Google App Script Problem
+
+
+
+<h2>03/24 meeting</h2>
+
+The application seems to work. Further tests are needed to see if it works completely: 
+
+- Use the application during several days once a day (the goal is to see if the words that have to be reviwed are in fact reviewed).
+
+- If the upper objective is completed, A test on the quality of the spaced repetition algorithm is needed.
+
+<h3>Next Goal</h3>
+
+- Need to implement the word difficulty with word frequency (easiest way to go)
+- Begin experiment procedure ?

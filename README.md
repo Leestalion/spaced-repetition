@@ -92,3 +92,31 @@ However, further tests are needed to see if it works completely:
 
 - Need to implement the word difficulty with word frequency (easiest way to go)
 - Begin experiment procedure ?
+
+
+
+
+<h2>04/06 meeting</h2>
+
+<h3>Last meeting review</h3>
+
+- There is a need to deploy an application very sensitive to each user (learning personnalization)
+
+<h3>Done this week</h3>
+
+The link to the application : https://expo.io/@lestalion/quicklearn.
+
+- I changed the application look to make the user feel better.
+- I added some important functionnalities so that the user can delete its account and reset its data.
+- I added a counter of word for the user to see how many words he has to review today.
+- The application testing is concluant, I even enjoyed using it.
+
+<p align="center">
+  <img src="https://github.com/Leestalion/spaced-repetition/blob/main/images/homev2.jpg" width="350" title="hover text">
+</p>
+
+<h3>Next Goal</h3>
+
+- Implement the word difficulty
+- Implement a questionnaire once n reviews (for example n=5 or 10) to ask the user if the review density is too high or too low, or to keep it that way.
+- Implement word difficulty per topics (according to some sources, it appears that a user would be more likely to remember a word related to the topic he/she likes.

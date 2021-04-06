@@ -119,4 +119,4 @@ The link to the application : https://expo.io/@lestalion/quicklearn.
 
 - Implement the word difficulty
 - Implement a questionnaire once n reviews (for example n=5 or 10) to ask the user if the review density is too high or too low, or to keep it that way.
-- Implement word difficulty per topics (according to some sources, it appears that a user would be more likely to remember a word related to the topic he/she likes.
+- Implement word difficulty per topics (according to some sources, it appears that a user would be more likely to remember a word related to the topic he/she likes: https://ieeexplore.ieee.org/abstract/document/7325205)

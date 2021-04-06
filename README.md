@@ -101,6 +101,11 @@ However, further tests are needed to see if it works completely:
 <h3>Last meeting review</h3>
 
 - There is a need to deploy an application very sensitive to each user (learning personnalization)
+- I decided the make the project explanation clearer for you so that you may understand some of its structure.
+
+<p align="center">
+  <img src="https://github.com/Leestalion/spaced-repetition/blob/main/images/AppResume.png" width="350" title="hover text">
+</p>
 
 <h3>Done this week</h3>
 

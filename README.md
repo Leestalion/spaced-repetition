@@ -104,7 +104,7 @@ However, further tests are needed to see if it works completely:
 - I decided the make the project explanation clearer for you so that you may understand some of its structure.
 
 <p align="center">
-  <img src="https://github.com/Leestalion/spaced-repetition/blob/main/images/AppResume.png" width="350" title="hover text">
+  <img src="https://github.com/Leestalion/spaced-repetition/blob/main/images/AppResume.png" title="hover text">
 </p>
 
 <h3>Done this week</h3>

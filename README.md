@@ -125,3 +125,20 @@ The link to the application : https://expo.io/@lestalion/quicklearn.
 - Implement the word difficulty
 - Implement a questionnaire once n reviews (for example n=5 or 10) to ask the user if the review density is too high or too low, or to keep it that way.
 - Implement word difficulty per topics (according to some sources, it appears that a user would be more likely to remember a word related to the topic he/she likes: https://ieeexplore.ieee.org/abstract/document/7325205)
+
+
+<h2>04/19 meeting</h2>
+
+<h3>Last meeting review</h3>
+
+- 2 types of personalization for flash card learning: difficulty + topic / time series
+
+<h3>Done this week</h3>
+
+The link to the application : https://expo.io/@lestalion/quicklearn.
+
+- Begin the Final Report
+- Work on the application (currently solving bugs)
+- Designing the algorithms to implement the new personalization strategies
+
+<h3>Next Goal</h3>

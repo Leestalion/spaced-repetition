@@ -142,3 +142,5 @@ The link to the application : https://expo.io/@lestalion/quicklearn.
 - Designing the algorithms to implement the new personalization strategies
 
 <h3>Next Goal</h3>
+
+- Continue to work on the application
